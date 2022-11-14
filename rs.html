@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Peta RS</title>
+    <link rel="stylesheet" href="leaflet.css"/>
+    <script src="leaflet.js"></script>
+</head>
+<body>
+    <div id="mapku" style="width: 100%; height: 600px;"></div>
+
+</body>
+<script type="text/javascript">
+     var mymap = L.map('mapku').setView([-0.9137822,100.4640162],17);
+    
+     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom:18,
+        id:'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+
+    var info_rs_unand ='<p style  ="text-align: center;"><img src="images/ig_2001090007.png" width="100px" height="100px"/></p><p>Masjid Raya Kuranji is headquartered in Jl. Raya Kuranji No.28, Kuranji, Kec. Kuranji, Kota Padang, Sumatera Barat 25175, Indonesia. Masjid Raya Kuranji operates in the field of mosque and is rated by customers as 5-stars on Google. </p>';
+    
+    var info_rs_sitirahmah ='<p style  ="text-align: center;"><img src="images/unand.png" width="100px" height="100px"/></p><p> adalah masjid terbesar di provinsi Sumatra Barat yang terletak di Jalan Chatib Sulaiman, Kecamatan Padang Utara, Kota Padang</p>';
+    
+    var info_rs_hermina ='<p style  ="text-align: center;"><img src="images/unand.png" width="100px" height="100px"/></p><p></p>';
+
+  var info_rs_unand
+  var info_rs_sitirahmah
+  var info_rs_hermina
+  var info_rs_yossudarso
+  var info_rs_mdjamil
+  var info_rs_tentara
+  var info_rs_bmc
+  var info_rs_rasidin
+  var info_rs_ropanasuri
+  var info_rs_selaguri
+
+  L.marker([-0.9202678855879648, 100.45648125146288]).bindTooltip("RS UNAND").bindPopup(info_rs_unand).addTo(mymap); 
+
+  L.marker([-0.8707044249250894, 100.38395389668639]).bindTooltip("RS SITI RAHMAH").bindPopup(info_rs_sitirahmah).addTo(mymap); 
+
+  L.marker([-0.9174895304541196, 100.36043093796795]).bindTooltip("RS HERMINA").bindPopup(info_rs_hermina).addTo(mymap); 
+
+  L.marker([-0.9362953060617734, 100.36261500913294]).bindTooltip("RS YOS SUDARSO").bindPopup(info_rs_yossudarso).addTo(mymap); 
+
+  L.marker([-0.9433623790663095, 100.36705486495782]).bindTooltip("RS M.DJAMIL").bindPopup(info_rs_mdjamil).addTo(mymap); 
+
+  L.marker([-0.9506509889237652, 100.37198796680295]).bindTooltip("RS TENTARA").bindPopup(info_rs_tentara).addTo(mymap); 
+
+  L.marker([-0.9508360342162696, 100.36754145330801]).bindTooltip("RS BMC").bindPopup(info_rs_bmc).addTo(mymap); 
+
+  L.marker([-0.87935345491767, 100.39456079563796]).bindTooltip("RS RASIDIN").bindPopup(info_rs_rasidin).addTo(mymap); 
+
+  L.marker([-0.9350945415584607, 100.3593456802979]).bindTooltip("RS ROPANASURI").bindPopup(info_rs_ropanasuri).addTo(mymap); 
+
+  L.marker([-0.9424005599398108, 100.35804006495788]).bindTooltip("RS SELAGURI").bindPopup(info_rs_selaguri).addTo(mymap); 
+
+  var circle = L.circle ([-0.9373955595283165, 100.36037832401897],{
+        color: 'red', 
+        fillColor: 'f03',
+        fillOpacity: 0.5,
+        radius: 500
+    }).addTo(mymap).bindPopup('I am a circle');
+
+    var polygon = L.polygon([
+        [-0.9202678855879648, 100.45648125146288],
+        [-0.8707044249250894, 100.38395389668639],
+        [-0.9174895304541196, 100.36043093796795],
+        [-0.9362953060617734, 100.36261500913294],
+        [-0.9433623790663095, 100.36705486495782],
+        [-0.9506509889237652, 100.37198796680295],
+        [-0.9508360342162696, 100.36754145330801],
+        [-0.87935345491767, 100.39456079563796],
+        [-0.9350945415584607, 100.3593456802979],
+        [-0.9424005599398108, 100.35804006495788]
+    ]).addTo(mymap).bindPopup('I am a polygon')
+
+    var popup = L.popup()
+        .setLatLng(e.latlng)
+        .setContent('you clicked the map at'+ e.latlng.toString())
+        .openOn(mymap);
+
+        var LeafIcon = L.Icon.extend({
+            options: {
+                iconSize: [16,16]
+            }
+        });
+
+        var masjidicon = new LeafIcon ({iconUrl: 'images/masjidicon.png'});
+        L.marker([-0.9241036505238577, 100.3625110123699],{icon:masjidicon}).bindTooltip("mesjid raya").addTo(mymap);
+
+
+  
+</script>
+</html>
